@@ -6,10 +6,12 @@ import hello.hellospring.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+//@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+  //  @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     } // 같은 객체로 만드는 과정, 직접 new X , dependency injection
