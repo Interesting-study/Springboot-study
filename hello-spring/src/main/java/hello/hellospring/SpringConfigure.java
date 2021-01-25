@@ -1,7 +1,6 @@
 package hello.hellospring;
 
-import hello.hellospring.repository.JdbcMemberRepository;
-import hello.hellospring.repository.MemberRepository;
+import hello.hellospring.repository.*;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,11 +11,12 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfigure {
 
-    private DataSource dataSource;
+    private DataSource datasource;
 
     @Autowired
-    public SpringConfigure(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public SpringConfigure(DataSource datasource) {
+
+        this.datasource = datasource;
     }
 
     @Bean
@@ -28,6 +28,6 @@ public class SpringConfigure {
     @Bean
     public MemberRepository memberRepository(){
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        return new JdbcMemberRepository(datasource);
     }
 }

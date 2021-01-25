@@ -17,12 +17,14 @@ public class MemberController {
 
     @Autowired //연결해줌, dependency injection
     public MemberController(MemberService memberService) {
+
         this.memberService = memberService;
     }
 
 
     @GetMapping("/members/new")
     public String CreateForm(){
+
         return "members/createMemberForm";
     }
 
