@@ -42,7 +42,7 @@ class MemoryMemberRepositoryTest {
         member2.setName("otter2");
         repository.save(member2);
 
-        Member result =  repository.findByname("otter1").get();
+        Member result =  repository.findByName("otter1").get();
 
         assertThat(result).isEqualTo(member1);
     }

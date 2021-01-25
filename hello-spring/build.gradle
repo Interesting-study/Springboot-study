@@ -16,8 +16,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	runtimeOnly 'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc' //db를 연결하려면 필수
+	runtimeOnly 'com.h2database:h2' //h2 데이터 베이스 사용중이니까
 }
 test {
 	useJUnitPlatform()
