@@ -11,12 +11,12 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfigure {
 
-    private DataSource datasource;
+    private DataSource dataSource;
 
     @Autowired
-    public SpringConfigure(DataSource datasource) {
+    public SpringConfigure(DataSource dataSource) {
 
-        this.datasource = datasource;
+        this.dataSource = dataSource;
     }
 
     @Bean
@@ -28,6 +28,6 @@ public class SpringConfigure {
     @Bean
     public MemberRepository memberRepository(){
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(datasource);
+        return new JdbcMemberRepository(dataSource);
     }
 }
