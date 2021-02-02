@@ -37,6 +37,12 @@ public class SpringConfigure {
         return new MemberService(memberRepository);
     }
 
+    /* Aop 첫번째 방법
+    @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
+    }*/
+
     /*@Bean
     public MemberRepository memberRepository(){
         //return new MemoryMemberRepository();
