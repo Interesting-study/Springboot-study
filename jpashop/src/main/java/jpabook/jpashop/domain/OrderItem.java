@@ -8,10 +8,12 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+
+//@NoArgsConstructor(access = AccessLevel.PROTECTED)
+// ( = protected Orderitem(){}
 @Entity
 @Getter @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-// ( = protected Orderitem(){}
+@Table(name = "order_item")
 public class OrderItem {
 
     @Id @GeneratedValue

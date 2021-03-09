@@ -44,10 +44,14 @@ public class Order {
     }
 
     public void addOrderItem(OrderItem orderItem){
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
+
+    public void setDelivery(Delivery delivery) {
         this.delivery = delivery;
         delivery.setOrder(this);
     }
-
     //==생성 메서드==//
     public static Order createOrder(Member member, Delivery delivery, OrderItem...  OrderItems){
         Order order = new Order();
