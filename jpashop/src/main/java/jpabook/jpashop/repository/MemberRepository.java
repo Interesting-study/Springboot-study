@@ -13,6 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberRepository {
 
+    @PersistenceContext
     private final EntityManager em;
 
     /*public MemberRepository(EntityManager em){
