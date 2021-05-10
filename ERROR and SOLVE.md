@@ -22,3 +22,17 @@
 
 * > 로그 3줄만 뜨고 톰캣이 실행되지 않는 현상(war를 선택했을 때
     * 해결법 : 무료버전 일 경우 그럴 수 있음. gradle을 gradle로 실행
+
+<br>
+<br>
+
+* > Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBException
+    * 원인 : JAVA 11에서 에러 발생함 
+        * 해결법 :  
+        ```{.html}
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency> 
+        ```
