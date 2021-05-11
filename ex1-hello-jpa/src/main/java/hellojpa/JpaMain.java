@@ -99,9 +99,27 @@ public class JpaMain {
 //            em.close();
 //        } //정석코드의 예
 
-        try {
+//        try {
+//
+//            Member member = new Member(200L, "member200");
+//            em.persist(member);
+//
+//            em.flush();
+//
+//            System.out.println("======================");
+//
+//            tx.commit();
+//        } catch (Exception e){
+//            tx.rollback();
+//        } finally {
+//            em.close();
+//        } //정석코드의 예
 
-            Member member = new Member(200L, "member200");
+        try {
+            Member member = new Member();
+            //member.setId("ID_A");
+            member.setUsername("C");
+
             em.persist(member);
 
             em.flush();
