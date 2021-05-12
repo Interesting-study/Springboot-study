@@ -116,15 +116,15 @@ public class JpaMain {
 //        } //정석코드의 예
 
         try {
-            Member member = new Member();
-            //member.setId("ID_A");
-            member.setUsername("C");
-
-            em.persist(member);
-
-            em.flush();
-
-            System.out.println("======================");
+//            Member member = new Member();
+//            //member.setId("ID_A");
+//            member.setUsername("C");
+//
+//            em.persist(member);
+//
+//            em.flush();
+//
+//            System.out.println("======================");
 
             tx.commit();
         } catch (Exception e){
