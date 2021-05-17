@@ -4,8 +4,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//Item 단독으로 쓰일 일이 없다는 가정 아래
 @Entity
-public class Item {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+public abstract class Item extends BaseEntity{
 
     @Id @GeneratedValue
     @Column(name = "ITEM_ID")

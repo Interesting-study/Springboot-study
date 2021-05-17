@@ -3,7 +3,7 @@ package jpabook.jpashopp.domain;
 import javax.persistence.*;
 
 @Entity
-public class OrderItem {
+public class OrderItem extends BaseEntity{
 
 //    @Column(name = "ORDER_ID")
 //    private Long orderId;
