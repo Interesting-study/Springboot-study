@@ -36,3 +36,8 @@
             <version>2.3.0</version>
         </dependency> 
         ```
+
+<br>
+<br>
+
+* > REST FULL API가 뭔지 체크해보기(중요)

@@ -2,13 +2,11 @@ package jpabook.jpashop.api;
 
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.service.MemberService;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -36,6 +34,30 @@ public class MemberApiController {
     }
     //Api를 만들때 엔티티의 수정이 있을 경우 크게 영향을 받지 않는다 (DTO 방식 - DTO(Data Transfer Object)
     // 참고 : https://gmlwjd9405.github.io/2018/12/25/difference-dao-dto-entity.html )
+
+    /**
+     * 회원정보수정하는 API
+     */
+    @PutMapping("api/v2/members/{id}")
+    public UpdateMemberResponse updateMemberV2(
+            @PathVariable("id") Long id,
+            @RequestBody @Valid UpdateMemberRequest request){
+        memberService.update(id, request.getName());
+        Member findMember = memberService.findOne(id);
+        return new UpdateMemberResponse(findMember.getId(), findMember.getName());
+    }
+
+    @Data
+    static class UpdateMemberRequest{
+        private String name;
+    }
+
+    @Data
+    @AllArgsConstructor
+    static class UpdateMemberResponse{
+        private Long id;
+        private String name;
+    }
 
     @Data
     static class CreateMemberRequest{
