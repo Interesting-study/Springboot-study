@@ -23,6 +23,7 @@ public class Member {
     @Embedded
     private Address address;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "member") //Order 테이블에 있는 member 필드에 의해 맵핑된 것일 뿐이다.
     private List<Order> orders = new ArrayList<>();
 

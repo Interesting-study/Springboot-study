@@ -34,7 +34,7 @@ public class MemberApiController {
 
         return new Result(collect.size(), collect);
     }
-    //그냥 arraylist로 하면 가독성이 어지기 때문에 저렇게 변환함
+    //그냥 arraylist로 하면 가독성이 없어지기 때문에 저렇게 변환함
 
     @Data
     @AllArgsConstructor
