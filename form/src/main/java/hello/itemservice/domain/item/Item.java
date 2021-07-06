@@ -1,20 +1,16 @@
-package hello.itemservice.domain;
+package hello.itemservice.domain.item;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter @Setter
+@Data
 public class Item {
 
     private Long id;
     private String itemName;
     private Integer price;
     private Integer quantity;
-    //Integer 쓰는 이유는 Null이 들어갈 수도 있어서
-
 
     public Item() {
-
     }
 
     public Item(String itemName, Integer price, Integer quantity) {

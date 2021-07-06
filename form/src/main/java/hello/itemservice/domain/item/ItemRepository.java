@@ -1,4 +1,4 @@
-package hello.itemservice.domain;
+package hello.itemservice.domain.item;
 
 import org.springframework.stereotype.Repository;
 
@@ -10,31 +10,32 @@ import java.util.Map;
 @Repository
 public class ItemRepository {
 
-    private final static Map<Long, Item> store = new HashMap<>(); //실제는 HashMap X, Concurrent
-    private static long sequence = 0L; //AtomicLong
+    private static final Map<Long, Item> store = new HashMap<>(); //static
+    private static long sequence = 0L; //static
 
-    public Item save(Item item){
+    public Item save(Item item) {
         item.setId(++sequence);
-        store.put(item.getId() , item);
+        store.put(item.getId(), item);
         return item;
     }
 
-    public Item findById(Long id){
+    public Item findById(Long id) {
         return store.get(id);
     }
 
-    public List<Item> findAll(){
+    public List<Item> findAll() {
         return new ArrayList<>(store.values());
     }
 
-    public void update(Long ItemId, Item updateParam){
-        Item findItem = findById(ItemId);
+    public void update(Long itemId, Item updateParam) {
+        Item findItem = findById(itemId);
         findItem.setItemName(updateParam.getItemName());
         findItem.setPrice(updateParam.getPrice());
         findItem.setQuantity(updateParam.getQuantity());
     }
 
-    public void clearStore(){
+    public void clearStore() {
         store.clear();
     }
+
 }
