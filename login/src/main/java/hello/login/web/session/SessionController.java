@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 
-@Slf4j
+@Slf4j 
 @RestController
 public class SessionController {
 
