@@ -1,5 +1,7 @@
 package com.deeplify.tutorial.oauthlogin;
 
+import com.deeplify.tutorial.oauthlogin.oauth.token.AuthToken;
+import com.deeplify.tutorial.oauthlogin.oauth.token.AuthTokenProvider;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,7 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class OauthLoginApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void 토큰_생성(){
+
     }
 
 }

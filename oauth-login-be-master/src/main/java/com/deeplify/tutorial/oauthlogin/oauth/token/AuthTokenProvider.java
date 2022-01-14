@@ -24,6 +24,11 @@ public class AuthTokenProvider {
 
     public AuthTokenProvider(String secret) {
         this.key = Keys.hmacShaKeyFor(secret.getBytes());
+        System.out.println("--------------");
+        System.out.println("AuthTokenProvider.AuthTokenProvider");
+        System.out.println("secret = " + secret);
+        System.out.println("key = " + key);
+        System.out.println("--------------");
     }
 
     public AuthToken createAuthToken(String id, Date expiry) {

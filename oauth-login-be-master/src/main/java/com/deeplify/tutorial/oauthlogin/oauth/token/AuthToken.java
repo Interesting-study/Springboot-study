@@ -26,9 +26,13 @@ public class AuthToken {
     AuthToken(String id, String role, Date expiry, Key key) {
         this.key = key;
         this.token = createAuthToken(id, role, expiry);
+        System.out.println("AuthToken.AuthToken");
+        System.out.println("token = " + token);
+        System.out.println("key = " + key);
     }
 
     private String createAuthToken(String id, Date expiry) {
+        System.out.println("AuthToken.createAuthToken");
         return Jwts.builder()
                 .setSubject(id)
                 .signWith(key, SignatureAlgorithm.HS256)
@@ -46,11 +50,15 @@ public class AuthToken {
     }
 
     public boolean validate() {
+        System.out.println("AuthToken.validate");
+        System.out.println("this.getTokenClaims() != null = " + this.getTokenClaims() != null);
         return this.getTokenClaims() != null;
     }
 
     public Claims getTokenClaims() {
         try {
+            System.out.println("key = " + key);
+            System.out.println("token = " + token);
             return Jwts.parserBuilder()
                     .setSigningKey(key)
                     .build()

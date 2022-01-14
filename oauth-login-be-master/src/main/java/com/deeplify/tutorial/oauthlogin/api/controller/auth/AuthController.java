@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+//@RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthController {
 
@@ -37,7 +37,7 @@ public class AuthController {
     private final static long THREE_DAYS_MSEC = 259200000;
     private final static String REFRESH_TOKEN = "refresh_token";
 
-    @PostMapping("/login")
+    @PostMapping("/api/v1/auth/login")
     public ApiResponse login(
             HttpServletRequest request,
             HttpServletResponse response,
@@ -84,7 +84,7 @@ public class AuthController {
         return ApiResponse.success("token", accessToken.getToken());
     }
 
-    @GetMapping("/refresh")
+    @GetMapping("/api/v1/auth/refresh")
     public ApiResponse refreshToken (HttpServletRequest request, HttpServletResponse response) {
         // access token 확인
         String accessToken = HeaderUtil.getAccessToken(request);
